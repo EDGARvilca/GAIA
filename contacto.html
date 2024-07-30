@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAIA - Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para la página de contacto */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+            background-color: #2E4C2B;
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 1rem 2rem;
+            background-color: #2E4C2B;
+            box-sizing: border-box;
+        }
+
+        .logo img {
+            width: 80px;
+            height: auto;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .profile-section .profile-name {
+            background-color: #00FF00;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            font-size: 1.2rem;
+        }
+
+        .profile-section .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            background-color: #3E6E4B;
+            padding: 2rem;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .contact-form label {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            width: 100%;
+            text-align: left;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            border: none;
+            background-color: #fff;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+        }
+
+        .contact-form button {
+            background-color: #FF0000;
+            color: white;
+            padding: 0.7rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* Media queries para diferentes tamaños de pantalla */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .contact-form {
+                padding: 1rem;
+            }
+
+            .contact-form label, .contact-form input, .contact-form textarea, .contact-form button {
+                font-size: 1rem;
+            }
+
+            .contact-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .profile-section .profile-name {
+                font-size: 1rem;
+            }
+
+            .contact-form {
+                padding: 1rem;
+                max-width: 100%;
+            }
+
+            .contact-form label, .contact-form input, .contact-form textarea, .contact-form button {
+                font-size: 0.9rem;
+            }
+
+            .contact-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="GAIA Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="profile-section">
+            <div class="profile-name">L</div>
+            <div class="profile-icon">
+                <img src="assets/profile-icon.png" alt="Icono de perfil">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="contact-container">
+            <h2 class="contact-title">Contacto</h2>
+            <form class="contact-form" id="contactForm" action="contacto.php" method="POST">
+                <label for="name">Nombre Completo</label>
+                <input type="text" id="name" name="name" placeholder="Tu nombre completo" required>
+
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+
+                <label for="subject">Asunto</label>
+                <input type="text" id="subject" name="subject" placeholder="Asunto de tu mensaje" required>
+
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

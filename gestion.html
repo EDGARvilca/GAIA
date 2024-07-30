@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAIA - Gestión</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para la página de Gestión */
+
+        .management-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+            background-color: #2E4C2B;
+            color: white;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 1rem 2rem;
+            background-color: #2E4C2B;
+            box-sizing: border-box;
+        }
+
+        .logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .profile-section .profile-name {
+            background-color: #00FF00;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            font-size: 1.2rem;
+        }
+
+        .profile-section .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .taxonomy-tabs {
+            display: flex;
+            width: 100%;
+            max-width: 1000px;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+
+        .taxonomy-tabs .tab {
+            flex: 1;
+            text-align: center;
+            padding: 1rem;
+            cursor: pointer;
+            background-color: #6BCB77;
+            border-radius: 10px;
+            margin: 0 0.5rem;
+            color: #2E4C2B;
+            text-decoration: none;
+        }
+
+        .taxonomy-tabs .tab.active {
+            background-color: #fff;
+            color: #2E4C2B;
+        }
+
+        .taxonomy-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1000px;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .taxonomy-content .card {
+            flex: 1 1 calc(33.333% - 1rem); /* Ajuste para que se alineen correctamente */
+            padding: 1rem;
+            background-color: #fff;
+            color: #333;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 1rem; /* Espaciado entre filas de tarjetas */
+        }
+
+        .taxonomy-content .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            background-color: #2E4C2B;
+            color: white;
+            border-radius: 10px;
+            padding: 0.5rem;
+        }
+
+        .taxonomy-content .card p {
+            font-size: 1rem;
+            margin-top: 0;
+        }
+
+        .no-results {
+            font-size: 1.5rem;
+            color: red;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .taxonomy-tabs {
+                flex-direction: column;
+            }
+
+            .taxonomy-tabs .tab {
+                margin: 0.5rem 0;
+            }
+
+            .taxonomy-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .taxonomy-content .card {
+                width: 100%;
+                max-width: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="GAIA Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="profile-section">
+            <div class="profile-name">L</div>
+            <div class="profile-icon">
+                <img src="assets/profile-icon.png" alt="Icono de perfil">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="management-container">
+            <div class="taxonomy-tabs">
+                <a class="tab" href="taxonomy.html">Sistemática</a>
+                <a class="tab" href="biology.html">Biología y Ecología</a>
+                <a class="tab active" href="gestion.html">Gestión</a>
+            </div>
+            <div class="taxonomy-content">
+                <div class="card">
+                    <h3>Interrelaciones conocidas</h3>
+                    <p>Contenido sobre interrelaciones conocidas...</p>
+                </div>
+                <div class="card">
+                    <h3>Categoría IUCN</h3>
+                    <p>Datos insuficientes</p>
+                </div>
+                <div class="card">
+                    <h3>Relación con el ser humano</h3>
+                    <p>Contenido sobre la relación con el ser humano...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

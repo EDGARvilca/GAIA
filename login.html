@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAIA - Inicio de sesión</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos de la página de inicio de sesión */
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            background-color: #2E4C2B;
+            color: white;
+            border-radius: 10px;
+            min-height: 50vh;
+            position: relative;
+        }
+
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-form h2 {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .login-form label {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-form input {
+            width: 300px;
+            padding: 0.5rem;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 30px;
+            border: none;
+            background-color: #fff;
+            text-align: center;
+            
+        }
+
+        .login-form button {
+            background-color: #0F9D58;
+            color: white;
+            padding: 0.7rem 2rem;
+            border: none;
+            border-radius: 50%;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translate(200%, 0%);
+
+        }
+
+        .login-form .links {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .login-form .links a {
+            color: red;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1rem;
+        }
+
+        .login-image {
+            position: relative;
+            
+            z-index: 2;
+            text-align: center;
+        }
+
+        .login-image img {
+            transform: translate(-20%, 0%);
+            max-width: 400px;
+            width: 40vw;
+            height: 40vw;
+            height: auto;
+            margin-bottom: 2rem;
+            border-radius: 50%;
+            border: 5px solid #ffffff00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="GAIA Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Inicio de sesión</a></li>
+                <li><a href="register.html" class="highlight">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="login-container">
+            <div class="login-image">
+                <img src="assets/2.1.png" alt="Inicio de sesión">
+            </div>
+            <div class="login-form">
+                <h2>Inicio de sesión</h2>
+                <form action="login.php" method="POST">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" name="username" placeholder="Usuario" required>
+        
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
+        
+                    <button type="submit">OK</button>
+                </form>
+                <div class="links">
+                    <a href="register.html">Registrarse</a>
+                    <a href="olvidaste.html">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAIA - Registro</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos de la página de registro */
+
+        .register-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            background-color: #2E4C2B;
+            color: rgb(224, 62, 62);
+            min-height: 100vh;
+        }
+
+        .register-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .register-image img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 50%;
+            border: 5px solid #ffffff00;
+        }
+
+        .register-form {
+            flex: 1;
+            max-width: 500px;
+            margin-left: 2rem;
+            background-color: #f0f0f000;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .register-form h2 {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .register-form input {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 30px;
+            border: none;
+            background-color: #c2cfc7;
+            text-align: left;
+        }
+
+        .register-form button {
+            background-color: #FFA500;
+            color: white;
+            padding: 0.7rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .register-form .links {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .register-form .links a {
+            color: red;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .register-form .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="GAIA Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Inicio de sesión</a></li>
+                <li><a href="register.html" class="highlight">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="register-container">
+            <div class="register-image">
+                <img src="assets/3.1.png" alt="Imagen de registro">
+            </div>
+            <div class="register-form">
+                <h2>Registro</h2>
+                <form action="register.php" method="POST">
+                    <input type="text" name="full_name" placeholder="Nombres completos" required>
+                    <input type="email" name="email" placeholder="Correo" required>
+                    <input type="tel" name="phone" placeholder="Número de celular" required>
+                    <input type="date" name="birth_date" placeholder="Fecha de nacimiento" required>
+                    <input type="text" name="dni" placeholder="DNI" required>
+                    <input type="text" name="institution" placeholder="Institución (opcional)">
+                    <button type="submit">REGISTRARSE</button>
+
+                </form>
+                <div class="links">
+                    <a href="login.html">Inicio de sesión</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAIA - Búsqueda</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos de la página de búsqueda */
+        .search-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+            background-color: #2E4C2B;
+            color: white;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 1rem 2rem;
+            background-color: #2E4C2B;
+            box-sizing: border-box;
+        }
+
+        .logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .profile-section .profile-name {
+            background-color: #00FF00;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            font-size: 1.2rem;
+        }
+
+        .profile-section .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1000px;
+            margin: 2rem 0;
+        }
+
+        .search-bar label {
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            color: #fff;
+        }
+
+        .search-bar input[type="text"] {
+            flex: 1;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border-radius: 50px;
+            border: none;
+            background-color: #fff;
+            color: #333;
+            margin-bottom: 1rem;
+            max-width: 600px;
+            box-sizing: border-box;
+        }
+
+        .results {
+            text-align: center;
+            width: 100%;
+            max-width: 1000px;
+            box-sizing: border-box;
+            margin-top: 2rem;
+        }
+
+        .results h2 {
+            font-size: 1.5rem;
+            color: red;
+            margin-bottom: 1rem;
+        }
+
+        .results img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            .search-bar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .search-bar label,
+            .search-bar input[type="text"] {
+                width: 100%;
+                text-align: center;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="GAIA Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Inicio de sesión</a></li>
+                <li><a href="register.html" class="highlight">Registrarse</a></li>
+            </ul>
+        </nav>
+        <div class="profile-section">
+            <div class="profile-name">L</div>
+            <div class="profile-icon">
+                <img src="assets/profile-icon.png" alt="Icono de perfil">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="search-container">
+            <div class="search-bar">
+                <label for="search">Buscar:</label>
+                <input type="text" id="search" placeholder="Buscar especies, hábitats, etc.">
+                <button onclick="performSearch()">Buscar</button>
+            </div>
+            <div class="results no-results" id="noResultsMessage" style="display: none;">
+                <h2>Búsqueda no encontrada</h2>
+                <img src="assets/1.png" alt="Imagen de paisaje">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function performSearch() {
+            var searchQuery = document.getElementById('search').value.toLowerCase();
+            
+            if (searchQuery.includes("especie")) {
+                window.location.href = 'taxonomy.html';
+            } else {
+                document.getElementById('noResultsMessage').style.display = 'block';
+            }
+        }
+
+        document.getElementById('search').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
+</body>
+</html>

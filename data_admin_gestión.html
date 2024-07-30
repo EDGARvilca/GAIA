@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAIA - Administrar Data - Gestión</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para la página de administrar data */
+        .data-admin-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+            background-color: #2E4C2B;
+            color: white;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 1rem 2rem;
+            background-color: #2E4C2B;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-section .profile-name {
+            background-color: #00FF00;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            font-size: 1.2rem;
+        }
+
+        .profile-section .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .admin-data-title {
+            font-size: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .data-category {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1000px;
+            margin-bottom: 2rem;
+        }
+
+        .data-category label {
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #2E4C2B;
+            background-color: #fff;
+            padding: 0.5rem;
+            border-radius: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .data-category textarea {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            border-radius: 10px;
+            border: none;
+            background-color: #fff;
+            color: #333;
+            min-height: 150px;
+            box-sizing: border-box;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .btn-container .continue-btn {
+            background-color: #FF0000;
+            color: white;
+            padding: 0.7rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .data-category label, .data-category textarea {
+                font-size: 1.2rem;
+            }
+
+            .admin-data-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .data-category label, .data-category textarea {
+                font-size: 1rem;
+            }
+
+            .admin-data-title {
+                font-size: 1.2rem;
+            }
+
+            .btn-container .continue-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="GAIA Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="profile-section">
+            <div class="profile-name">L</div>
+            <div class="profile-icon">
+                <img src="assets/profile-icon.png" alt="Icono de perfil">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="data-admin-container">
+            <h2 class="admin-data-title">Administrar Data</h2>
+            <div class="data-category">
+                <label for="known-relations">INTERRELACIONES CONOCIDAS</label>
+                <textarea id="known-relations" placeholder="Escribe..."></textarea>
+            </div>
+            <div class="data-category">
+                <label for="iucn-category">CATEGORÍA IUCN</label>
+                <textarea id="iucn-category" placeholder="Escribe..."></textarea>
+            </div>
+            <div class="data-category">
+                <label for="human-relation">RELACIÓN CON EL SER HUMANO</label>
+                <textarea id="human-relation" placeholder="Escribe..."></textarea>
+            </div>
+            <div class="btn-container">
+                <button class="continue-btn" onclick="saveDataAndRedirect()">FINALIZAR</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function saveDataAndRedirect() {
+            // Aquí podrías agregar lógica para guardar los datos del formulario
+            // Por ejemplo, una solicitud AJAX para enviar los datos al servidor
+
+            // Simular el guardado de datos y redirigir al perfil
+            alert('Datos guardados con éxito');
+            window.location.href = 'profile.html';
+        }
+    </script>
+</body>
+</html>

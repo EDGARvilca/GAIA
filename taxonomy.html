@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAIA - Sistemática</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para la página de sistemática */
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        .taxonomy-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+            background-color: #2E4C2B;
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 1rem 2rem;
+            background-color: #2E4C2B;
+            box-sizing: border-box;
+        }
+
+        .logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-section .profile-name {
+            background-color: #00FF00;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            font-size: 1.2rem;
+        }
+
+        .profile-section .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .taxonomy-tabs {
+            display: flex;
+            width: 100%;
+            max-width: 1000px;
+            justify-content: space-around;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .taxonomy-tabs .tab {
+            flex: 1;
+            text-align: center;
+            padding: 1rem;
+            cursor: pointer;
+            background-color: #6BCB77;
+            border-radius: 10px;
+            margin: 0.5rem;
+            color: #2E4C2B;
+            text-decoration: none;
+        }
+
+        .taxonomy-tabs .tab.active {
+            background-color: #fff;
+            color: #2E4C2B;
+        }
+
+        .filters {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 2rem;
+            box-sizing: border-box;
+        }
+
+        .filters .category {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .filters .category label {
+            width: 30%;
+            font-size: 1.2rem;
+            text-align: right;
+            margin-right: 1rem;
+            color: #fff;
+            background-color: #6BCB77;
+            padding: 0.5rem;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .filters .category input {
+            width: 70%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border-radius: 10px;
+            border: none;
+            background-color: #fff;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            .header, .nav ul, .taxonomy-tabs, .filters .category {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav ul {
+                justify-content: center;
+            }
+
+            .profile-section {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .taxonomy-tabs {
+                flex-direction: column;
+            }
+
+            .taxonomy-tabs .tab {
+                margin: 0.5rem 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .filters .category label,
+            .filters .category input {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .taxonomy-tabs .tab {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .filters .category label,
+            .filters .category input {
+                font-size: 1rem;
+            }
+
+            .profile-section .profile-name {
+                font-size: 1rem;
+                padding: 0.3rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="GAIA Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="profile-section">
+            <div class="profile-name">L</div>
+            <div class="profile-icon">
+                <img src="assets/profile-icon.png" alt="Icono de perfil">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="taxonomy-container">
+            <div class="taxonomy-tabs">
+                <a href="#" class="tab active">Sistemática</a>
+                <a href="biology.html" class="tab">Biología y Ecología</a>
+                <a href="gestion.html" class="tab">Gestión</a>
+            </div>
+            <div class="filters">
+                <div class="category">
+                    <label for="common-name">NOMBRE COMÚN</label>
+                    <input type="text" id="common-name" placeholder="Ojo de venado">
+                </div>
+                <div class="category">
+                    <label for="kingdom">REINO</label>
+                    <input type="text" id="kingdom" placeholder="Fauna">
+                </div>
+                <div class="category">
+                    <label for="class">CLASE</label>
+                    <input type="text" id="class" placeholder="Insecta">
+                </div>
+                <div class="category">
+                    <label for="order">ORDEN</label>
+                    <input type="text" id="order" placeholder="Lepidoptera">
+                </div>
+                <div class="category">
+                    <label for="family">FAMILIA</label>
+                    <input type="text" id="family" placeholder="Nymphalidae">
+                </div>
+                <div class="category">
+                    <label for="genus">GÉNERO</label>
+                    <input type="text" id="genus" placeholder="Junonia">
+                </div>
+                <div class="category">
+                    <label for="species">ESPECIE</label>
+                    <input type="text" id="species" placeholder="evarete">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
